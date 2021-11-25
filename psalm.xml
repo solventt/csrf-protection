@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<psalm errorLevel="1">
+    <projectFiles>
+        <directory name="src"/>
+    </projectFiles>
+
+    <issueHandlers>
+
+        <PossiblyInvalidArrayAccess>
+            <errorLevel type="suppress">
+                <file name="src/CsrfMiddleware.php" />
+            </errorLevel>
+        </PossiblyInvalidArrayAccess>
+
+    </issueHandlers>
+</psalm>
