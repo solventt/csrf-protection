@@ -10,11 +10,19 @@ use Solventt\Csrf\Interfaces\TokenStorageInterface;
 
 class MaskedCsrfToken implements CsrfTokenInterface
 {
+    private TokenStorageInterface $storage;
+    private SecurityInterface $security;
+    private string $name;
+
     public function __construct(
-        private TokenStorageInterface $storage,
-        private SecurityInterface $security,
-        private string $name = CsrfTokenInterface::DEFAULT_NAME
-    ) {}
+        TokenStorageInterface $storage,
+        SecurityInterface $security,
+        string $name = CsrfTokenInterface::DEFAULT_NAME
+    ) {
+        $this->storage = $storage;
+        $this->security = $security;
+        $this->name = $name;
+    }
 
     /**
      * @inheritDoc

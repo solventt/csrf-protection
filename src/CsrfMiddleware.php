@@ -16,11 +16,19 @@ class CsrfMiddleware implements MiddlewareInterface
 {
     private string $headerName = 'X-CSRF-Token';
 
+    private CsrfTokenInterface $token;
+    private ResponseFactoryInterface $responseFactory;
+    private ?Closure $failureHandler;
+
     public function __construct(
-        private CsrfTokenInterface $token,
-        private ResponseFactoryInterface $responseFactory,
-        private ?Closure $failureHandler = null
-    ) {}
+        CsrfTokenInterface $token,
+        ResponseFactoryInterface $responseFactory,
+        ?Closure $failureHandler = null
+    ) {
+        $this->token = $token;
+        $this->responseFactory = $responseFactory;
+        $this->failureHandler = $failureHandler;
+    }
 
     public function process(Request $request, RequestHandlerInterface $handler): ResponseInterface
     {
