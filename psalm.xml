@@ -12,5 +12,17 @@
             </errorLevel>
         </PossiblyInvalidArrayAccess>
 
+        <ArgumentTypeCoercion>
+            <errorLevel type="suppress">
+                <file name="src/SecurityHelper.php" />
+            </errorLevel>
+        </ArgumentTypeCoercion>
+
+        <PossiblyInvalidArgument>
+            <errorLevel type="suppress">
+                <file name="src/SecurityHelper.php" />
+            </errorLevel>
+        </PossiblyInvalidArgument>
+
     </issueHandlers>
 </psalm>
