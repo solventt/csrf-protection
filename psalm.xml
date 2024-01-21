@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<psalm errorLevel="3">
+<psalm errorLevel="1">
     <projectFiles>
         <directory name="src"/>
     </projectFiles>
@@ -23,6 +23,13 @@
                 <file name="src/SecurityHelper.php" />
             </errorLevel>
         </PossiblyInvalidArgument>
+
+        <RiskyTruthyFalsyComparison>
+            <errorLevel type="suppress">
+                <file name="src/CsrfMiddleware.php" />
+                <file name="src/MaskedCsrfToken.php" />
+            </errorLevel>
+        </RiskyTruthyFalsyComparison>
 
     </issueHandlers>
 </psalm>
