@@ -30,6 +30,7 @@ class SecurityHelper implements SecurityInterface
      */
     public function addMask(string $token): string
     {
+        /** @psalm-suppress InvalidArgument $mask */
         $mask = random_bytes(strlen($token));
 
         $token = $mask ^ $token;
