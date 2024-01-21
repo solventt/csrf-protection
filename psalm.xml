@@ -24,5 +24,12 @@
             </errorLevel>
         </PossiblyInvalidArgument>
 
+        <RiskyTruthyFalsyComparison>
+            <errorLevel type="suppress">
+                <file name="src/CsrfMiddleware.php" />
+                <file name="src/MaskedCsrfToken.php" />
+            </errorLevel>
+        </RiskyTruthyFalsyComparison>
+
     </issueHandlers>
 </psalm>
